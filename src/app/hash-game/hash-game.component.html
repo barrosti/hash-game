@@ -1,0 +1,117 @@
+<div>
+  <h2>Hash Game</h2>
+  
+  <!-- home screen - start -->
+  <div class="principal" *ngIf="showStart">
+    <a href="#" 
+       class="botao"
+       (click)="startGame()">
+       Start
+    </a>
+  </div>
+  <!-- home screen - end -->
+
+  <!-- board -start -->
+  <div *ngIf="showBoard">
+    <ul>
+      <!-- (0,0) -->
+      <li class="kz-border-bottom kz-border-right"
+      	[class.kz-img-x]="showX(0,0)"
+      	[class.kz-img-o]="showO(0,0)"
+      	[class.kz-color-win]="displayWinner(0,0)"
+      	(click)="peformMove(0,0)"
+      ></li>
+      <!-- (0,1) -->
+      <li class="kz-border-bottom kz-border-right"
+      	[ngClass]= "{
+      					'kz-img-x': showX(0,1),
+      					'kz-img-o': showO(0,1),
+      					'kz-color-win': displayWinner(0,1)
+      				}"
+		(click)="peformMove(0,1)"      				
+      ></li>
+      <!-- (0,2) -->
+      <li class="kz-border-bottom"
+      	[ngClass]= "{
+      					'kz-img-x': showX(0,2),
+      					'kz-img-o': showO(0,2),
+      					'kz-color-win': displayWinner(0,2)
+      				}"
+		(click)="peformMove(0,2)"      				      
+      ></li>
+      <!-- (1,0) -->
+      <li class="kz-border-bottom kz-border-right"
+      	[ngClass]= "{
+      					'kz-img-x': showX(1,0),
+      					'kz-img-o': showO(1,0),
+      					'kz-color-win': displayWinner(1,0)
+      				}"
+		(click)="peformMove(1,0)"      
+      ></li>
+      <!-- (1,1) -->
+      <li class="kz-border-bottom kz-border-right"
+      	[ngClass]= "{
+      					'kz-img-x': showX(1,1),
+      					'kz-img-o': showO(1,1),
+      					'kz-color-win': displayWinner(1,1)
+      				}"
+		(click)="peformMove(1,1)"            
+      ></li>
+      <!-- (1,2) -->
+      <li class="kz-border-bottom"
+      	[ngClass]= "{
+      					'kz-img-x': showX(1,2),
+      					'kz-img-o': showO(1,2),
+      					'kz-color-win': displayWinner(1,2)
+      				}"
+		(click)="peformMove(1,2)"      
+      ></li>
+      <!-- (2,0) -->
+      <li class="kz-border-right"
+      	[ngClass]= "{
+      					'kz-img-x': showX(2,0),
+      					'kz-img-o': showO(2,0),
+      					'kz-color-win': displayWinner(2,0)
+      				}"
+		(click)="peformMove(2,0)"      
+      ></li>
+      <!-- (2,1) -->
+      <li class="kz-border-right"
+      	[ngClass]= "{
+      					'kz-img-x': showX(2,1),
+      					'kz-img-o': showO(2,1),
+      					'kz-color-win': displayWinner(2,1)
+      				}"
+		(click)="peformMove(2,1)"
+      ></li>
+      <!-- (2,2) -->
+      <li
+      	[ngClass]= "{
+      					'kz-img-x': showX(2,2),
+      					'kz-img-o': showO(2,2),
+      					'kz-color-win': displayWinner(2,2)
+      				}"
+		(click)="peformMove(2,2)"
+      ></li>
+    </ul>    
+  </div>
+  <!-- board -end -->
+
+  <!-- result screen - start -->
+  <div *ngIf="showFinal" >
+    <span>
+    <p *ngIf="player==2">You Won!!!</p>
+    <p *ngIf="player==1">Game Over</p>
+    <p *ngIf="player==0">The game ended in a draw</p>
+    <br />
+    <a href="#" 
+         class="botao"
+         (click)="newGame()">
+         Play again
+      </a>
+    </span>
+  </div>
+  <!-- result screen - end -->
+
+</div>
+

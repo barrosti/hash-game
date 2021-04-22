@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "hash-game"
+  "defaultProject": "hash-game",
+  "cli": {
+    "analytics": "cab40da1-21df-4037-8119-345b251713c3"
+  }
 }
